@@ -1,5 +1,15 @@
 module ManageIQ
   class PluginGenerator < Rails::Generators::NamedBase
+
+    @@abstract_classes_array = []
+
+    def is_abstract_class
+      if @@abstract_classes_array.include?(self.class.name)
+        puts "Running generators for abstract base class is NOT allows."
+        exit!
+      end
+    end
+
     source_root File.expand_path('templates', __dir__)
     source_paths << source_root
 
@@ -8,9 +18,22 @@ module ManageIQ
     class_option :path, :type => :string, :default => 'plugins',
                  :desc => "Create plugin at given path"
 
+    def self.inherited(base)
+      source_root File.expand_path('templates', __dir__)
+      source_paths << source_root
+      super
+    end
+
     def self.namespace
       # Thor has it's own version of snake_case, which doesn't account for acronyms
-      name.underscore.tr("/", ":").sub(/_generator$/, "")
+      name_space = name.underscore.tr("/", ":").sub(/_generator$/, "")
+
+      # remove from generator list abstract providers.
+      if @@abstract_classes_array.include?(name)
+        Rails::Generators.hide_namespace(name_space)
+      end
+
+      name_space
     end
 
     def create_plugin_dir
@@ -36,6 +59,7 @@ module ManageIQ
       template "LICENSE.txt"
       template "Rakefile"
       template "README.md"
+      template "zanata.xml"
       template "bin/rails"
       template "bin/setup"
       template "bin/update"
