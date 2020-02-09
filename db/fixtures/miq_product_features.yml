@@ -6052,6 +6052,54 @@
         :feature_type: admin
         :identifier: ems_object_storage_delete
 
+
+  # Storage Resource
+- :name: Storage Resources
+  :description: Everything under Storage Resources
+  :feature_type: node
+  :identifier: storage_resource
+  :children:
+  - :name: View
+    :description: View Storage Resources
+    :feature_type: view
+    :identifier: storage_resource_view
+    :children:
+    - :name: List
+      :description: Display Lists of Storage Resources
+      :feature_type: view
+      :identifier: storage_resource_show_list
+    - :name: Show
+      :description: Display Individual Storage Resources
+      :feature_type: view
+      :identifier: storage_resource_show
+  - :name: Operate
+    :description: Perform Operations on Storage Resources
+    :feature_type: control
+    :identifier: storage_resource_control
+    :children:
+    - :name: Edit Tags
+      :description: Edit Tags of Storage Resources
+      :feature_type: control
+      :identifier: storage_resource_tag
+  - :name: Modify
+    :description: Modify Storage Resources
+    :feature_type: admin
+    :identifier: storage_resource_admin
+    :children:
+    - :name: Add
+      :description: Add a Storage Resource
+      :feature_type: admin
+      :identifier: storage_resource_new
+    - :name: Edit
+      :description: Edit a Storage Resource
+      :feature_type: admin
+      :identifier: storage_resource_edit
+    - :name: Remove
+      :description: Remove Storage Resources
+      :feature_type: admin
+      :identifier: storage_resource_delete
+
+
 # EmsPhysicalInfra
 - :name: Physical Infrastructure Providers
   :description: Everything under Physical Infrastructure Providers
@@ -6265,6 +6313,27 @@
       :description: Refresh relationships and power states for all items related to Physical Storages
       :feature_type: control
       :identifier: physical_storage_refresh
+    - :name: Edit Tags
+      :description: Edit Tags of Physical Storage
+      :feature_type: control
+      :identifier: physical_storage_tag
+  - :name: Modify
+    :description: Modify Physical Storage
+    :feature_type: admin
+    :identifier: physical_storage_admin
+    :children:
+      - :name: Add
+        :description: Add a Physical Storage
+        :feature_type: admin
+        :identifier: physical_storage_new
+      - :name: Edit
+        :description: Edit a Physical Storage
+        :feature_type: admin
+        :identifier: physical_storage_edit
+      - :name: Remove
+        :description: Remove Physical Storage
+        :feature_type: admin
+        :identifier: physical_storage_delete
 
 # Physical Servers
 - :name: Physical Servers
