@@ -45,11 +45,12 @@ module Automation
       def do_stuff
 
         svc =  $evm.vmdb(:ext_management_system).where(:name=>@name).first
-        puts "IN POOLS LIST"
+        puts "!IN POOLS LIST"
         p svc
-        #call list_volumes method
-        lv = svc.object_send('list_volumes')
-
+        #call list_pools method
+        puts "call method list_pools on #{svc}"
+        lv = svc.object_send('list_pools')
+        p lv
         # make list of pool names
         pool_names = lv.map do |v| v['name'] end
         values = {}
