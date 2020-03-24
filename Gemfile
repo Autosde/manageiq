@@ -94,7 +94,8 @@ gem "american_date"
 ### providers
 
 group :autosde, :manageiq_default do
-  manageiq_plugin "manageiq-providers-autosde" # TODO: Sort alphabetically...
+  gem "manageiq-providers-autosde",  :path => "plugins/manageiq-providers-autosde"
+  # manageiq_plugin "manageiq-providers-autosde" # TODO: Sort alphabetically...
 end
 
 group :amazon, :manageiq_default do
