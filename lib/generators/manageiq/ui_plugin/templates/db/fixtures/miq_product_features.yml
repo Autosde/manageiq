@@ -1,0 +1,6 @@
+- :name: Demo
+  :description: <%= ui_plugin_name.split('_').map(&:capitalize).join(' ') %> Demo
+  :feature_type: node
+  :identifier: <%= ui_plugin_name %>_demo
+
+

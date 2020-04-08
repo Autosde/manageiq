@@ -1,0 +1,8 @@
+Description:
+    Create or update ManageIQ UI plugin
+
+Example:
+    rails generate manageiq:ui_plugin ManageIQ::UiPluginName
+    rails generate manageiq:ui_plugin ManageIQ::UiPluginName --path ~/dev
+    rails generate manageiq:ui_plugin ManageIQ::UiPluginName --vcr --dummy
+    rails generate manageiq:ui_plugin ManageIQ::UiPluginName --vcr --dummy --dev

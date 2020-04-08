@@ -34,7 +34,7 @@ gem "bcrypt",                         "~> 3.1.10",     :require => false
 gem "bundler",                        ">=1.15",        :require => false
 gem "byebug",                                          :require => false
 gem "color",                          "~>1.8"
-gem "config",                         "~>2.2", ">=2.2.1", :require => false
+gem "config",                         "~>2.0",         :require => false
 gem "dalli",                          "=2.7.6",        :require => false
 gem "default_value_for",              "~>3.3"
 gem "docker-api",                     "~>1.33.6",      :require => false
@@ -66,16 +66,16 @@ gem "pg-dsn_parser",                  "~>0.1.0",       :require => false
 gem "query_relation",                 "~>0.1.0",       :require => false
 gem "rails",                          "~>5.1.7"
 gem "rails-i18n",                     "~>5.x"
-gem "rake",                           ">=12.3.3",      :require => false
+gem "rake",                           ">=11.0",        :require => false
 gem "rest-client",                    "~>2.0.0",       :require => false
 gem "ripper_ruby_parser",             "~>1.5.1",       :require => false
 gem "ruby-progressbar",               "~>1.7.0",       :require => false
 gem "rubyzip",                        "~>2.0.0",       :require => false
 gem "snmp",                           "~>1.2.0",       :require => false
-gem "sprockets",                      "~>3.7.2",       :require => false
+gem "sprockets",                      "~>3.0",         :require => false
 gem "sqlite3",                        "~>1.3.0",       :require => false
 gem "sync",                           "~>0.5",         :require => false
-gem "sys-filesystem",                 "~>1.3.4"
+gem "sys-filesystem",                 "~>1.3.1"
 gem "terminal",                                        :require => false
 
 # Modified gems (forked on Github)
@@ -117,6 +117,7 @@ end
 
 group :foreman, :manageiq_default do
   manageiq_plugin "manageiq-providers-foreman"
+  gem "foreman_api_client",             ">=0.1.0",   :require => false, :git => "https://github.com/ManageIQ/foreman_api_client.git", :branch => "master"
 end
 
 group :google, :manageiq_default do
@@ -209,7 +210,7 @@ group :seed, :manageiq_default do
 end
 
 group :smartstate, :manageiq_default do
-  gem "manageiq-smartstate",            "~>0.5.3",       :require => false
+  gem "manageiq-smartstate",            "~>0.5.0",       :require => false
 end
 
 group :consumption, :manageiq_default do
@@ -225,10 +226,6 @@ end
 
 group :v2v, :ui_dependencies do
   manageiq_plugin "manageiq-v2v"
-end
-
-group :sde, :ui_dependencies do
-  manageiq_plugin "manageiq-sde"
 end
 
 group :web_server, :manageiq_default do
@@ -260,7 +257,7 @@ unless ENV["APPLIANCE"]
   group :test do
     gem "brakeman",         "~>3.3",    :require => false
     gem "capybara",         "~>2.5.0",  :require => false
-    gem "coveralls",        "~>0.8.23", :require => false
+    gem "coveralls",                    :require => false
     gem "factory_bot",      "~>5.1",    :require => false
 
     # TODO: faker is used for url generation in git repository factory and the lenovo
