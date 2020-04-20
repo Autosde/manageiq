@@ -98,8 +98,8 @@ group :sde, :manageiq_default do
 end
 
 group :autosde, :manageiq_default do
-  gem "manageiq-providers-autosde",  :path => "plugins/manageiq-providers-autosde"
-  # manageiq_plugin "manageiq-providers-autosde" # TODO: Sort alphabetically...
+  # gem "manageiq-providers-autosde",  :path => "plugins/manageiq-providers-autosde"
+  manageiq_plugin "manageiq-providers-autosde" # TODO: Sort alphabetically...
 end
 
 group :amazon, :manageiq_default do
