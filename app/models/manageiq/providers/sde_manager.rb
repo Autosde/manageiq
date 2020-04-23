@@ -2,6 +2,11 @@ module ManageIQ::Providers
   class SdeManager < BaseManager
     include SupportsFeatureMixin
 
+
+    has_many :physical_chassis,  :foreign_key => "ems_id", :dependent => :destroy, :inverse_of => :ext_management_system
+    has_many :computer_systems, :through => :physical_chassis, :source => :computer_system
+    has_many :hardwares, :through => :computer_systems, :source => :hardware
+    has_many :volumes, :through => :hardwares, :source => :volumes
     has_many :physical_servers,  :foreign_key => "ems_id", :dependent => :destroy, :inverse_of => :ext_management_system
     has_many :physical_storages, :foreign_key => "ems_id", :dependent => :destroy, :inverse_of => :ext_management_system
     #has_many :physical_pools, :foreign_key => "ems_id", :dependent => :destroy, :inverse_of => :ext_management_system
