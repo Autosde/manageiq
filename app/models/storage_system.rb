@@ -1,0 +1,2 @@
+class StorageSystem < ApplicationRecord
+end

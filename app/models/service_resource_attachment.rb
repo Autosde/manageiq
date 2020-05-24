@@ -1,0 +1,2 @@
+class ServiceResourceAttachment < ApplicationRecord
+end
