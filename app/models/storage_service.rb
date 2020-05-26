@@ -11,6 +11,7 @@ class StorageService < ApplicationRecord
   belongs_to :ext_management_system, :foreign_key => :ems_id, :class_name => "ExtManagementSystem"
 
   has_many   :storage_resources, :through => :service_resource_attachment
+  has_many   :storage_volumes
 
   acts_as_miq_taggable
 

@@ -12,6 +12,7 @@ class StorageResource < ApplicationRecord
   belongs_to :storage_system, :foreign_key => :storage_system_id, :class_name => "StorageSystem"
 
   has_many  :storage_services
+  has_many  :storage_volumes
 
   acts_as_miq_taggable
 
