@@ -93,12 +93,11 @@ gem "american_date"
 #
 ### providers
 
-group :sde, :manageiq_default do
-  gem "manageiq-sde",  :path => "plugins/manageiq-sde"
+group :core_autosde, :manageiq_default do
+  manageiq_plugin "manageiq-core-autosde"
 end
 
 group :autosde, :manageiq_default do
-  # gem "manageiq-providers-autosde",  :path => "plugins/manageiq-providers-autosde"
   manageiq_plugin "manageiq-providers-autosde" # TODO: Sort alphabetically...
 end
 
