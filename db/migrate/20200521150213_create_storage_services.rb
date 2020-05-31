@@ -9,6 +9,8 @@ class CreateStorageServices < ActiveRecord::Migration[5.1]
       t.bigint :version
       t.string :parent_service_id
       t.string :capability_values
+      t.bigint :ems_id
+      t.string :ems_ref
 
       t.timestamps
     end

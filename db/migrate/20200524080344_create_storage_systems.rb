@@ -8,6 +8,7 @@ class CreateStorageSystems < ActiveRecord::Migration[5.1]
       t.string :storage_family
       t.string :system_type
       t.string :uuid
+      t.bigint :ems_id
 
       t.timestamps
     end

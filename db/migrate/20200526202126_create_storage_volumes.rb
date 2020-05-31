@@ -7,6 +7,8 @@ class CreateStorageVolumes < ActiveRecord::Migration[5.1]
       t.bigint :size
       t.string :storage_resource_id
       t.string :uuid
+      t.bigint :ems_id
+      t.string :ems_ref
 
       t.timestamps
     end
