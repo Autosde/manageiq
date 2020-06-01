@@ -5,6 +5,8 @@ class CreateServiceResourceAttachments < ActiveRecord::Migration[5.1]
       t.string :storage_resource_id
       t.boolean :compliant
       t.string :uuid
+      t.bigint :ems_id
+      t.string :ems_ref
 
       t.timestamps
     end

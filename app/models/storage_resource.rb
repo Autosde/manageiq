@@ -27,7 +27,7 @@ class StorageResource < ApplicationRecord
     ext_management_system && ext_management_system.class::StorageResource
   end
 
-  # Create a cloud volume as a queued task and return the task id. The queue
+  # Create a storage resource as a queued task and return the task id. The queue
   # name and the queue zone are derived from the provided EMS instance. The EMS
   # instance and a userid are mandatory. Any +options+ are forwarded as
   # arguments to the +create_volume+ method.
@@ -70,7 +70,7 @@ class StorageResource < ApplicationRecord
     raise NotImplementedError, _("raw_create_storage_resource must be implemented in a subclass")
   end
 
-  # Update a cloud volume as a queued task and return the task id. The queue
+  # Update a storage resource as a queued task and return the task id. The queue
   # name and the queue zone are derived from the EMS, and a userid is mandatory.
   #
   def update_storage_resource_queue(userid, options = {})
@@ -104,7 +104,7 @@ class StorageResource < ApplicationRecord
     raise NotImplementedError, _("raw_update_volume must be implemented in a subclass")
   end
 
-  # Delete a cloud volume as a queued task and return the task id. The queue
+  # Delete a storage resource as a queued task and return the task id. The queue
   # name and the queue zone are derived from the EMS, and a userid is mandatory.
   #
   def delete_storage_resource_queue(userid)
