@@ -8,7 +8,7 @@ class CreateStorageResources < ActiveRecord::Migration[5.1]
       t.bigint :logical_free
       t.bigint :logical_total
       t.string :pool_name
-      t.string :storage_system_id
+      t.bigint :storage_system_id
 
       t.timestamps
     end
