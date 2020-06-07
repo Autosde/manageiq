@@ -49,13 +49,18 @@ class StorageVolume < ApplicationRecord
     MiqTask.generic_action_with_callback(task_opts, queue_opts)
   end
 
-  def self.create_volume(ems_id, options = {})
-    raise ArgumentError, _("ems_id cannot be nil") if ems_id.nil?
-    ext_management_system = ExtManagementSystem.find(ems_id)
+  def self.create_volume(storage_resource_id, size, name, options = {})
+    # @type [StorageResource]
+    storage_resource = StorageResource.find(storage_resource_id)
+    raise ArgumentError, _("Storage resource could not be found") if storage_resource.nil?
+
+    # @type [ExtManagementSystem]
+    ext_management_system = storage_resource.ext_management_system
     raise ArgumentError, _("ext_management_system cannot be found") if ext_management_system.nil?
 
-    klass = class_by_ems(ext_management_system)
-    klass.raw_create_volume(ext_management_system, options)
+    # @type [class<StorageVolume>]
+    klass = ext_management_system.storage_volumes.klass
+    klass.raw_create_volume(ext_management_system, storage_resource, size, name, options)
   end
 
   def self.validate_create_volume(ext_management_system)
@@ -65,7 +70,7 @@ class StorageVolume < ApplicationRecord
     validate_unsupported("Create Volume Operation")
   end
 
-  def self.raw_create_volume(_ext_management_system, _options = {})
+  def self.raw_create_volume(ext_management_system, storage_resource, size, name, options = {})
     raise NotImplementedError, _("raw_create_volume must be implemented in a subclass")
   end
 
