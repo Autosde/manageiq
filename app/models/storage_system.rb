@@ -9,7 +9,6 @@ class StorageSystem < ApplicationRecord
   include CustomActionsMixin
 
   belongs_to :ext_management_system, :foreign_key => :ems_id, :class_name => "ExtManagementSystem"
-  belongs_to :storage_system, :foreign_key => :storage_system_id, :class_name => "StorageSystem"
 
   has_many  :storage_resources
 

@@ -7,8 +7,8 @@ class ServiceResourceAttachment < ApplicationRecord
   include CustomActionsMixin
 
   belongs_to :ext_management_system, :foreign_key => :ems_id, :class_name => "ExtManagementSystem"
-  belongs_to :storage_service
-  belongs_to :storage_resource
+  belongs_to :storage_service, :foreign_key => :storage_service_id, :class_name => "StorageService"
+  belongs_to :storage_resource, :foreign_key => :storage_resource_id, :class_name => "StorageResource"
 
 
   acts_as_miq_taggable
