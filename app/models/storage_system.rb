@@ -11,7 +11,7 @@ class StorageSystem < ApplicationRecord
   belongs_to :ext_management_system, :foreign_key => :ems_id, :class_name => "ExtManagementSystem"
 
   has_many  :storage_resources
-  has_one :storage_system_type, :as => :storage_system_type, :class_name => "StorageSystemType"
+  belongs_to :storage_system_type, :foreign_key => :storage_system_type_id, :class_name => "StorageSystemType"
 
   acts_as_miq_taggable
 
@@ -137,8 +137,4 @@ class StorageSystem < ApplicationRecord
     raise NotImplementedError, _("raw_delete_storage_system must be implemented in a subclass")
   end
 
-end
-
-class StorageSystem < ApplicationRecord
-  
 end
