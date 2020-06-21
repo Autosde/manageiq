@@ -12,7 +12,6 @@ class StorageService < ApplicationRecord
 
   has_many   :service_resource_attachments
   has_many   :storage_resources, :through => :service_resource_attachments
-  has_many   :storage_volumes
 
   acts_as_miq_taggable
 
