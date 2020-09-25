@@ -15,6 +15,7 @@ module ManageIQ::Providers::StorageManager::BlockMixin
     has_many :service_resource_attachments, :foreign_key => "ems_id",
              :dependent => :destroy, :inverse_of => :ext_management_system
 
+    # TODO: [liran] - move this into cinder-storage (this is not general block mixin props)
     has_many :cloud_volume_snapshots, :foreign_key => :ems_id, :dependent => :destroy
     has_many :cloud_volume_backups,   :foreign_key => :ems_id, :dependent => :destroy
     has_many :cloud_volume_types,     :foreign_key => :ems_id, :dependent => :destroy

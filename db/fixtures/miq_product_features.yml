@@ -6330,6 +6330,10 @@
         :description: Edit a Physical Storage
         :feature_type: admin
         :identifier: physical_storage_edit
+      - :name: Remove
+        :description: Remove Physical Storage
+        :feature_type: admin
+        :identifier: physical_storage_delete
 
 # Physical Servers
 - :name: Physical Servers

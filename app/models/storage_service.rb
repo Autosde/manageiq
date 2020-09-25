@@ -19,7 +19,11 @@ class StorageService < ApplicationRecord
     ext_management_system && ext_management_system.class::StorageService
   end
 
-
+  # Create a cloud volume as a queued task and return the task id. The queue
+  # name and the queue zone are derived from the provided EMS instance. The EMS
+  # instance and a userid are mandatory. Any +options+ are forwarded as
+  # arguments to the +create_volume+ method.
+  #
   def self.create_storage_service_queue(userid, ext_management_system, options = {})
     task_opts = {
       :action => "creating Cloud StorageService for user #{userid}",
@@ -60,6 +64,9 @@ class StorageService < ApplicationRecord
     raise NotImplementedError, _("raw_create_storage_service must be implemented in a subclass")
   end
 
+  # Update a cloud volume as a queued task and return the task id. The queue
+  # name and the queue zone are derived from the EMS, and a userid is mandatory.
+  #
   def update_storage_service_queue(userid, options = {})
     task_opts = {
       :action => "updating StorageService for user #{userid}",
@@ -91,6 +98,9 @@ class StorageService < ApplicationRecord
     raise NotImplementedError, _("raw_update_volume must be implemented in a subclass")
   end
 
+  # Delete a cloud volume as a queued task and return the task id. The queue
+  # name and the queue zone are derived from the EMS, and a userid is mandatory.
+  #
   def delete_storage_service_queue(userid)
     task_opts = {
       :action => "deleting StorageService for user #{userid}",
