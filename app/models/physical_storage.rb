@@ -25,6 +25,7 @@ class PhysicalStorage < ApplicationRecord
 
   supports :refresh_ems
   supports_not :create
+  supports_not :delete
   acts_as_miq_taggable
 
   def my_zone
@@ -51,7 +52,22 @@ class PhysicalStorage < ApplicationRecord
   end
 
   def delete_physical_storage
-    raw_delete_physical_storage
+    #todo validation here
+    ext_management_system = ExtManagementSystem.find_by(:id => ems_id)
+    raise ArgumentError, _("ext_management_system cannot be found") if ext_management_system.nil?
+
+    # raise _("bla") if "#{ext_management_system.type.to_s}::PhysicalStorage".constantize.supports?("delete")
+    raise ArgumentError, _("ext_management_system cannot be found")
+
+    # bla = "#{ext_management_system.type.to_s}::PhysicalStorage".constantize.supports?("delete")
+    # if bla
+    #   byebug
+    #   return false
+    # end
+    # byebug
+    # item = find_record_with_rbac(PhysicalStorage, ems_id)
+    # item.supports?("delete")
+    # raw_delete_physical_storage
   end
 
   # Delete a storage system as a queued task and return the task id. The queue
