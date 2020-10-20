@@ -51,28 +51,33 @@ class PhysicalStorage < ApplicationRecord
     raise NotImplementedError, _("raw_delete_physical_storage must be implemented in a subclass")
   end
 
+  def ensure_delete_valid
+    unless ext_management_system
+      raise _("No Provider defined")
+    end
+    unless ext_management_system.has_credentials?
+      raise _("No Provider credentials defined")
+    end
+    unless ext_management_system.authentication_status_ok?
+      raise _("Provider failed last authentication check")
+    end
+    unless ExtManagementSystem.find_by(:id => ems_id)
+      raise ArgumentError, _("ext_management_system cannot be found")
+    end
+    unless "#{ext_management_system.type.to_s}::PhysicalStorage".constantize.supports?("delete")
+      raise _("#{ext_management_system.name} provider does not supports physical storage deletion")
+    end
+  end
+
   def delete_physical_storage
-    #todo validation here
-    ext_management_system = ExtManagementSystem.find_by(:id => ems_id)
-    raise ArgumentError, _("ext_management_system cannot be found") if ext_management_system.nil?
-
-    # raise _("bla") if "#{ext_management_system.type.to_s}::PhysicalStorage".constantize.supports?("delete")
-    raise ArgumentError, _("ext_management_system cannot be found")
-
-    # bla = "#{ext_management_system.type.to_s}::PhysicalStorage".constantize.supports?("delete")
-    # if bla
-    #   byebug
-    #   return false
-    # end
-    # byebug
-    # item = find_record_with_rbac(PhysicalStorage, ems_id)
-    # item.supports?("delete")
-    # raw_delete_physical_storage
+    raw_delete_physical_storage
   end
 
   # Delete a storage system as a queued task and return the task id. The queue
   # name and the queue zone are derived from the EMS, and a userid is mandatory.
   def delete_physical_storage_queue(userid)
+    ensure_delete_valid
+
     task_opts = {
         :action => "deleting PhysicalStorage for user #{userid}",
         :userid => userid
