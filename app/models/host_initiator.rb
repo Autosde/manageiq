@@ -45,7 +45,6 @@ class HostInitiator < ApplicationRecord
       :method_name => 'create_host_initiator',
       :role        => 'ems_operations',
       :queue_name  => ext_management_system.queue_name_for_ems_operations,
-      :zone        => ext_management_system.my_zone,
       :args        => [ext_management_system.id, options]
     }
 
