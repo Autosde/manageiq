@@ -759,7 +759,7 @@
   - sui_vm_tags
   - sui_notifications
 
-- :name: EvmRole-user_global_region
+- :name: EvmRole-user
   :read_only: true
   :miq_product_feature_identifiers:
   - about
