@@ -95,14 +95,17 @@
   - sui_notifications
   - revoke_user_sessions
 
-- :name: EvmRole-administrator_physical_storages
+- :name: EvmRole-physical_storages_administrator
   :read_only: true
   :miq_product_feature_identifiers:
     - about
     - all_vm_rules
-    - cloud_volume
-    - cloud_volume_backup
-    - cloud_volume_snapshot
+    - cloud_volume_show
+    - cloud_volume_show_list
+    - cloud_volume_backup_show
+    - cloud_volume_backup_show_list
+    - cloud_volume_snapshot_show
+    - cloud_volume_snapshot_show_list
     - cloud_volume_type
     - chargeback
     - chargeback_reports
@@ -983,17 +986,15 @@
   - sui_svc_catalog_cart
   - sui_cart
 
-- :name: EvmRole-user_physical_storages
+- :name: EvmRole-physical_storages_user
   :read_only: true
   :miq_product_feature_identifiers:
     - about
     - all_vm_rules
-    - cloud_volume_view
-    - cloud_volume_show_list
-    - cloud_volume_show
-    - cloud_volume_type_view
-    - cloud_volume_type_show_list
-    - cloud_volume_type_show
+    - cloud_volume
+    - cloud_volume_backup
+    - cloud_volume_snapshot
+    - cloud_volume_type
     - chargeback
     - chargeback_reports
     - dashboard
@@ -1011,22 +1012,18 @@
     - ems_physical_infra_show_list
     - ems_physical_infra_tag
     - ems_physical_infra_timeline
+    - ems_storage_discover
+    - ems_storage_refresh
     - ems_storage_show
     - ems_storage_show_list
-    - ems_storage_timeline
-    - ems_block_storage_view
-    - ems_block_storage_show_list
-    - ems_block_storage_timeline
-    - ems_block_storage_show
+    - ems_block_storage
     - event_streams_view
     - host_show
     - host_show_list
     - host_perf
     - host_tag
     - host_timeline
-    - host_initiator_view
-    - host_initiator_show_list
-    - host_initiator_show
+    - host_initiator
     - miq_task_my_ui
     - my_settings_default_views
     - my_settings_time_profiles
@@ -1051,7 +1048,10 @@
     - physical_chassis_view
     - physical_switch_view
     - physical_server_view
-    - physical_storage_view
+    - physical_storage_refresh
+    - physical_storage_show
+    - physical_storage_show_list
+    - physical_storage_tag
     - resource_pool_show
     - resource_pool_show_list
     - resource_pool_tag
@@ -1060,9 +1060,7 @@
     - storage_show
     - storage_show_list
     - storage_perf
-    - storage_resource_view
-    - storage_resource_show_list
-    - storage_resource_show
+    - storage_resource
     - storage_tag
     - timeline
     - vm_check_compliance
@@ -1071,9 +1069,7 @@
     - vm_infra_explorer
     - vm_html5_console
     - vm_vmrc_console
-    - volume_mapping_view
-    - volume_mapping_show_list
-    - volume_mapping_show
+    - volume_mapping
     - cockpit_console
     - vm_compare
     - vm_drift
