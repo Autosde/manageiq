@@ -175,7 +175,10 @@
     - vm_infra_explorer
     - vm_html5_console
     - vm_vmrc_console
-    - volume_mapping
+    - volume_mapping_refresh
+    - volume_mapping_show
+    - volume_mapping_show_list
+    - volume_mapping_tag
     - cockpit_console
     - vm_compare
     - vm_drift
@@ -998,6 +1001,11 @@
     - chargeback
     - chargeback_reports
     - dashboard
+    - ems_storage_recheck_auth_status
+    - ems_block_storage_refresh
+    - ems_block_storage_show
+    - ems_block_storage_show_list
+    - ems_block_storage_tag
     - ems_cluster_show
     - ems_cluster_show_list
     - ems_cluster_perf
