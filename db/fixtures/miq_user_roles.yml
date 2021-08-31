@@ -1024,7 +1024,6 @@
     - ems_storage_refresh
     - ems_storage_show
     - ems_storage_show_list
-    - ems_block_storage
     - event_streams_view
     - host_show
     - host_show_list
