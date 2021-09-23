@@ -1052,8 +1052,6 @@
   - miq_report_view
   - miq_request_admin
   - miq_request_view
-  - miq_task_all_ui
-  - miq_task_my_ui
   - miq_template_check_compliance
   - miq_template_compare
   - miq_template_drift
@@ -1069,6 +1067,12 @@
   - physical_switch_view
   - physical_server_view
   - physical_storage
+  - rbac_role_view
+  - rbac_user_view
+  - rbac_user_operate
+  - rbac_group_view
+  - rbac_group_operate
+  - rbac_tenant_view
   - resource_pool_show
   - resource_pool_show_list
   - resource_pool_tag
@@ -1081,6 +1085,7 @@
   - storage_perf
   - storage_resource
   - storage_tag
+  - tasks_view
   - timeline
   - vm_check_compliance
   - vm_cloud_explorer
