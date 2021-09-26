@@ -1066,7 +1066,10 @@
   - physical_chassis_view
   - physical_switch_view
   - physical_server_view
-  - physical_storage
+  - physical_storage_show_list
+  - physical_storage_show
+  - physical_storage_refresh
+  - physical_storage_tag
   - rbac_role_view
   - rbac_user_view
   - rbac_user_operate
