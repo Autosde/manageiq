@@ -115,10 +115,7 @@
   - ems_cluster_perf
   - ems_cluster_tag
   - ems_cluster_timeline
-  - ems_infra_show
-  - ems_infra_show_list
-  - ems_infra_tag
-  - ems_infra_timeline
+  - ems_infra
   - ems_physical_infra_console
   - ems_physical_infra_show
   - ems_physical_infra_show_list
