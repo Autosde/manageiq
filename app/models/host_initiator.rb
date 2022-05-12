@@ -18,6 +18,13 @@ class HostInitiator < ApplicationRecord
   supports_not :create
   acts_as_miq_taggable
 
+  supports_not :safe_delete
+  virtual_column :supports_safe_delete, :type => :boolean
+
+  def supports_safe_delete
+    supports?(:safe_delete)
+  end
+
   def my_zone
     ems = ext_management_system
     ems ? ems.my_zone : MiqServer.my_zone
@@ -61,6 +68,31 @@ class HostInitiator < ApplicationRecord
 
   def raw_delete_host_initiator
     raise NotImplementedError, _("raw_delete_host_initiator must be implemented in a subclass")
+  end
+
+  def safe_delete_host_initiator_queue(userid)
+    task_opts = {
+      :action => "Safe deleting host initiator for user #{userid}",
+      :userid => userid
+    }
+    queue_opts = {
+      :class_name  => self.class.name,
+      :method_name => 'safe_delete_host_initiator',
+      :instance_id => id,
+      :role        => 'ems_operations',
+      :queue_name  => ext_management_system.queue_name_for_ems_operations,
+      :zone        => ext_management_system.my_zone,
+      :args        => []
+    }
+    MiqTask.generic_action_with_callback(task_opts, queue_opts)
+  end
+
+  def safe_delete_host_initiator
+    raw_safe_delete_host_initiator
+  end
+
+  def raw_safe_delete_host_initiator
+    raise NotImplementedError, _("raw_safe_delete_host_initiator must be implemented in a subclass")
   end
 
   def delete_host_initiator
