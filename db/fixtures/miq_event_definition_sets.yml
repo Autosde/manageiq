@@ -29,3 +29,5 @@
   description: VM Operation
 - name: vm_process
   description: VM Lifecycle
+- name: physical_storage_alert
+  description: Physical Storage Alerts

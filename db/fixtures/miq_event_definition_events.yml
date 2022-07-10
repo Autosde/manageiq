@@ -798,3 +798,7 @@
   description: Physical Server Reset
   event_type: Default
   set_type: physical_server_operations
+- name: physical_storage_critical_alert
+  description: Physical Storage Alert
+  event_type: Default
+  set_type: physical_storage_alert
