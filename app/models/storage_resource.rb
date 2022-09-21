@@ -12,6 +12,8 @@ class StorageResource < ApplicationRecord
 
   has_many :cloud_volumes, :inverse_of => :storage_resource, :dependent => :destroy
 
+  has_many :storage_capability_value, foreign_key: true
+
   acts_as_miq_taggable
 
   def self.class_by_ems(ext_management_system)
