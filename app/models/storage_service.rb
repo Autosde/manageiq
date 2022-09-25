@@ -9,7 +9,7 @@ class StorageService < ApplicationRecord
   has_many :storage_service_resource_attachments, :inverse_of => :storage_service, :dependent => :destroy
   has_many :storage_resources, :through => :storage_service_resource_attachments
   has_many :cloud_volumes
-  has_many :storage_capability_value, foreign_key: true
+  has_and_belongs_to_many   :storage_capability_value, join_table: "storage_capability_values_services"
 
   acts_as_miq_taggable
 

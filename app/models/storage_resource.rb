@@ -12,7 +12,7 @@ class StorageResource < ApplicationRecord
 
   has_many :cloud_volumes, :inverse_of => :storage_resource, :dependent => :destroy
 
-  has_many :storage_capability_value, foreign_key: true
+  has_and_belongs_to_many   :storage_capability_value, join_table: "storage_capability_values_resources"
 
   acts_as_miq_taggable
 

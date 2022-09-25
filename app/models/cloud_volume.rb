@@ -23,7 +23,7 @@ class CloudVolume < ApplicationRecord
   has_many   :vms, :through => :hardwares, :foreign_key => :vm_or_template_id
   has_many   :volume_mappings, :dependent => :destroy
   has_many   :host_initiators, :through => :volume_mappings
-  has_many   :storage_capability_value, foreign_key: true
+  has_and_belongs_to_many   :storage_capability_value, join_table: "cloud_volumes_storage_capability_values"
 
   supports_not :backup_create
   supports_not :backup_restore
