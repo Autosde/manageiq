@@ -70,6 +70,10 @@ module ManageIQ::Providers
         def storage_capability_values
           add_common_default_values
         end
+
+        def storage_service_capability_values
+          add_common_default_values
+        end
       end
     end
   end
