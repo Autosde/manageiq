@@ -30,6 +30,9 @@ class PhysicalStorage < ApplicationRecord
   has_many :wwpn_candidates, :dependent => :destroy
   has_many :event_streams, :dependent => :nullify
 
+  has_many :physical_storage_capability_value_mappings, :inverse_of => :physical_storage, :dependent => :destroy
+  has_many :storage_capability_values, :through => :physical_storage_capability_value_mappings, :dependent => :destroy
+
   supports :timeline
 
   supports_not :create
