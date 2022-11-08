@@ -1,4 +1,4 @@
-class StorageCapability < ApplicationRecord
+class StorageCapabilityValue < ApplicationRecord
   include NewWithTypeStiMixin
   include ProviderObjectMixin
   include SupportsFeatureMixin
@@ -6,7 +6,7 @@ class StorageCapability < ApplicationRecord
   include EmsRefreshMixin
 
   belongs_to :ext_management_system, :foreign_key => :ems_id
-  has_many :storage_capability_values, :inverse_of => :storage_capability ,:dependent => :destroy
+  belongs_to :storage_capability, :foreign_key => :storage_capability_id
 
   acts_as_miq_taggable
 
