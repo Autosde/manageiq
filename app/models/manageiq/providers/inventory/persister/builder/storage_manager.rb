@@ -62,6 +62,10 @@ module ManageIQ::Providers
         def wwpn_candidates
           add_common_default_values
         end
+
+        def storage_capabilities
+          add_common_default_values
+        end
       end
     end
   end

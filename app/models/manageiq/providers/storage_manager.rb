@@ -12,6 +12,7 @@ module ManageIQ::Providers
     supports_not :storage_services
     supports_not :volume_multiattachment
     supports_not :volume_resizing
+    supports_not :storage_capability
 
     has_many :cloud_tenants, :foreign_key => :ems_id, :dependent => :destroy
     has_many :volume_availability_zones, :class_name => "AvailabilityZone", :foreign_key => :ems_id, :dependent => :destroy
@@ -44,6 +45,9 @@ module ManageIQ::Providers
     has_many :cloud_object_store_objects,    :foreign_key => :ems_id
 
     has_many :wwpn_candidates, :foreign_key => :ems_id, :dependent => :destroy,
+             :inverse_of => :ext_management_system
+
+    has_many :storage_capabilities, :foreign_key => :ems_id, :dependent => :destroy,
              :inverse_of => :ext_management_system
 
     belongs_to :parent_manager,
