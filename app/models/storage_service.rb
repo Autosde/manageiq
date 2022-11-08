@@ -10,6 +10,9 @@ class StorageService < ApplicationRecord
   has_many :storage_resources, :through => :storage_service_resource_attachments
   has_many :cloud_volumes
 
+  has_many :storage_service_capability_value_mappings, :inverse_of => :storage_service, :dependent => :destroy
+  has_many :storage_capability_values, :through => :storage_service_capability_value_mappings, :dependent => :destroy
+
   acts_as_miq_taggable
 
   def self.class_by_ems(ext_management_system)

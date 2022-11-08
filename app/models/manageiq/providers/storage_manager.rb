@@ -16,6 +16,7 @@ module ManageIQ::Providers
     supports_not :storage_capability_value
     supports_not :physical_storage_capability_value_mapping
     supports_not :storage_resource_capability_value_mapping
+    supports_not :storage_service_capability_value_mapping
 
     has_many :cloud_tenants, :foreign_key => :ems_id, :dependent => :destroy
     has_many :volume_availability_zones, :class_name => "AvailabilityZone", :foreign_key => :ems_id, :dependent => :destroy
@@ -58,6 +59,8 @@ module ManageIQ::Providers
     has_many :physical_storage_capability_value_mappings, :foreign_key => "ems_id",
              :dependent => :destroy, :inverse_of => :ext_management_system
     has_many :storage_resource_capability_value_mappings, :foreign_key => "ems_id",
+             :dependent => :destroy, :inverse_of => :ext_management_system
+    has_many :storage_service_capability_value_mappings, :foreign_key => "ems_id",
              :dependent => :destroy, :inverse_of => :ext_management_system
 
     belongs_to :parent_manager,
