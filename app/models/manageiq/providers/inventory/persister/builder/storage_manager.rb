@@ -74,6 +74,10 @@ module ManageIQ::Providers
         def physical_storage_capability_value_mappings
           add_common_default_values
         end
+
+        def storage_resource_capability_value_mappings
+          add_common_default_values
+        end
       end
     end
   end

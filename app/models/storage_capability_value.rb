@@ -14,6 +14,6 @@ class StorageCapabilityValue < ApplicationRecord
   acts_as_miq_taggable
 
   def self.class_by_ems(ext_management_system)
-    ext_management_system&.class_by_ems(:StorageResource)
+    ext_management_system&.class_by_ems(:StorageCapabilityValue)
   end
 end
