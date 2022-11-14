@@ -14,6 +14,7 @@ module ManageIQ::Providers
     supports_not :volume_resizing
     supports_not :storage_capability
     supports_not :storage_capability_value
+    supports_not :storage_family_capability_value_mapping
     supports_not :physical_storage_capability_value_mapping
     supports_not :storage_service_capability_value_mapping
 
@@ -55,6 +56,8 @@ module ManageIQ::Providers
     has_many :storage_capability_values, :foreign_key => :ems_id, :dependent => :destroy,
              :inverse_of => :ext_management_system
 
+    has_many :storage_family_capability_value_mappings, :foreign_key => "ems_id",
+             :dependent => :destroy, :inverse_of => :ext_management_system
     has_many :physical_storage_capability_value_mappings, :foreign_key => "ems_id",
              :dependent => :destroy, :inverse_of => :ext_management_system
     has_many :storage_service_capability_value_mappings, :foreign_key => "ems_id",
