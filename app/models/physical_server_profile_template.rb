@@ -21,8 +21,6 @@ class PhysicalServerProfileTemplate < ApplicationRecord
   end
 
   def self.check
-    require 'byebug'
-    byebug
     bulk=ManageIQ::Providers::CiscoIntersight::PhysicalInfraManager.first.connect(:service=>'BulkApi')
     cloner=ManageIQ::Providers::CiscoIntersight::PhysicalInfraManager.first.connect(:service=>'BulkMoCloner')
     cloner = IntersightClient::BulkMoCloner.new(
