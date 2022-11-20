@@ -19,4 +19,24 @@ class PhysicalServerProfileTemplate < ApplicationRecord
     ems = ext_management_system
     ems ? ems.my_zone : MiqServer.my_zone
   end
+
+  def self.check
+    require 'byebug'
+    byebug
+    bulk=ManageIQ::Providers::CiscoIntersight::PhysicalInfraManager.first.connect(:service=>'BulkApi')
+    cloner=ManageIQ::Providers::CiscoIntersight::PhysicalInfraManager.first.connect(:service=>'BulkMoCloner')
+    cloner = IntersightClient::BulkMoCloner.new(
+      {
+        :sources => [{"Moid" => '6346f11a77696e2d300b6049', "ObjectType" => 'server.ProfileTemplate'}],
+        :targets => [{"Name" => 'new-new', "ObjectType": 'server.Profile'}]
+      }
+    )
+    result = bulk.create_bulk_mo_cloner(cloner)
+    new_profile_moid = result.responses[0].body.moid
+
+    puts new_profile_moid
+
+
+
+  end
 end
