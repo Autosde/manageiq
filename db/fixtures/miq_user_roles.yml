@@ -170,6 +170,7 @@
   - storage_show_list
   - storage_perf
   - storage_resource
+  - service_now
   - storage_tag
   - tasks_view
   - timeline
@@ -1087,6 +1088,7 @@
   - storage_show_list
   - storage_perf
   - storage_resource
+  - service_now_new
   - storage_tag
   - tasks_view
   - timeline

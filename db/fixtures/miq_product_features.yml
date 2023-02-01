@@ -6130,6 +6130,7 @@
       :description: Display Lists of Storage Managers
       :feature_type: view
       :identifier: ems_storage_show_list
+      :children:
     - :name: Show
       :description: Display Individual Storage Managers
       :feature_type: view
@@ -6138,6 +6139,7 @@
       :description: Display Timelines for Storage Managers
       :feature_type: view
       :identifier: ems_storage_timeline
+
   - :name: Operate
     :description: Perform Operations on Storage Managers
     :feature_type: control
@@ -6318,25 +6320,6 @@
       :feature_type: control
       :identifier: storage_resource_tag
 
-  # Storage Service
-- :name: Storage Services
-  :description: Everything under Storage Services
-  :feature_type: node
-  :identifier: storage_service
-  :children:
-  - :name: View
-    :description: View Storage Services
-    :feature_type: view
-    :identifier: storage_service_view
-    :children:
-    - :name: List
-      :description: Display Lists of Storage Services
-      :feature_type: view
-      :identifier: storage_service_show_list
-    - :name: Show
-      :description: Display Individual Storage Services
-      :feature_type: view
-      :identifier: storage_service_show
 
   # Volume Mapping
 - :name: Volume Mapping
@@ -7360,3 +7343,9 @@
       :feature_type: control
       :hidden: false
       :identifier: add_global_filter
+    - :name: Service Now New
+      :description: service now new
+      :feature_type: control
+      :identifier: service_now_new
+
+
