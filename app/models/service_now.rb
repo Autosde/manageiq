@@ -1,0 +1,3 @@
+class ServiceNow < ApplicationRecord
+
+end
