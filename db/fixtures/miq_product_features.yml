@@ -6130,7 +6130,6 @@
       :description: Display Lists of Storage Managers
       :feature_type: view
       :identifier: ems_storage_show_list
-      :children:
     - :name: Show
       :description: Display Individual Storage Managers
       :feature_type: view
@@ -6139,7 +6138,6 @@
       :description: Display Timelines for Storage Managers
       :feature_type: view
       :identifier: ems_storage_timeline
-
   - :name: Operate
     :description: Perform Operations on Storage Managers
     :feature_type: control
@@ -7347,5 +7345,10 @@
       :description: service now new
       :feature_type: control
       :identifier: service_now_new
+    - :name: Service Now Connect
+      :description: service now connect
+      :feature_type: control
+      :identifier: service_now_connect
+
 
 
