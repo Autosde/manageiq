@@ -2439,7 +2439,7 @@ msgstr ""
 #: ../app/javascript/components/pxe-iso-image-form/pxe-iso-image-form.schema.js
 #: ../app/javascript/components/routers-form/RoutersForm.schema.js
 #: ../app/javascript/components/vm-cloud-add-remove-security-group-form/vm-cloud-add-security-form.schema.js
-#: ../app/javascript/components/volume-mapping-form/volume-mapping-form.schema.js
+#: ../app/javascript/components/volume-mapping-form/service-now-connect-form.schema.js
 #: ../app/views/catalog/_form_basic_info.html.haml
 #: ../app/views/condition/_form.html.haml
 #: ../app/views/layouts/_adv_search_body.html.haml
@@ -32691,7 +32691,7 @@ msgstr ""
 #:
 #: ../app/javascript/components/host-initiator-form/host-initiator-form.schema.js
 #: ../app/javascript/components/host-initiator-group-form/host-initiator-group-form.schema.js
-#: ../app/javascript/components/volume-mapping-form/volume-mapping-form.schema.js
+#: ../app/javascript/components/volume-mapping-form/service-now-connect-form.schema.js
 msgid "FC"
 msgstr ""
 
@@ -35978,7 +35978,7 @@ msgstr ""
 
 #:
 #: ../app/javascript/components/host-initiator-form/host-initiator-form.schema.js
-#: ../app/javascript/components/volume-mapping-form/volume-mapping-form.schema.js
+#: ../app/javascript/components/volume-mapping-form/service-now-connect-form.schema.js
 msgid "Host Initiator Group:"
 msgstr ""
 
@@ -35988,7 +35988,7 @@ msgid "Host Initiator Groups"
 msgstr ""
 
 #:
-#: ../app/javascript/components/volume-mapping-form/volume-mapping-form.schema.js
+#: ../app/javascript/components/volume-mapping-form/service-now-connect-form.schema.js
 msgid "Host Initiator:"
 msgstr ""
 
@@ -37542,7 +37542,7 @@ msgstr ""
 #:
 #: ../app/javascript/components/host-initiator-form/host-initiator-form.schema.js
 #: ../app/javascript/components/host-initiator-group-form/host-initiator-group-form.schema.js
-#: ../app/javascript/components/volume-mapping-form/volume-mapping-form.schema.js
+#: ../app/javascript/components/volume-mapping-form/service-now-connect-form.schema.js
 msgid "ISCSI"
 msgstr ""
 
@@ -48276,7 +48276,7 @@ msgstr ""
 #:
 #: ../app/javascript/components/host-initiator-form/host-initiator-form.schema.js
 #: ../app/javascript/components/host-initiator-group-form/host-initiator-group-form.schema.js
-#: ../app/javascript/components/volume-mapping-form/volume-mapping-form.schema.js
+#: ../app/javascript/components/volume-mapping-form/service-now-connect-form.schema.js
 msgid "NVMe"
 msgstr ""
 
@@ -50638,7 +50638,7 @@ msgid "Note"
 msgstr ""
 
 #:
-#: ../app/javascript/components/volume-mapping-form/volume-mapping-form.schema.js
+#: ../app/javascript/components/volume-mapping-form/service-now-connect-form.schema.js
 msgid ""
 "Note! Volume can't be mapped to an empty host-initiator-group (host-cluster). "
 "Empty host-initiator-groups are not listed."
@@ -54485,7 +54485,7 @@ msgstr[1] ""
 #:
 #: ../app/javascript/components/host-initiator-form/host-initiator-form.schema.js
 #: ../app/javascript/components/host-initiator-group-form/host-initiator-group-form.schema.js
-#: ../app/javascript/components/volume-mapping-form/volume-mapping-form.schema.js
+#: ../app/javascript/components/volume-mapping-form/service-now-connect-form.schema.js
 msgid "Physical Storage:"
 msgstr ""
 
@@ -56982,7 +56982,7 @@ msgstr ""
 #: ../app/javascript/components/host-initiator-form/host-initiator-form.schema.js
 #: ../app/javascript/components/host-initiator-group-form/host-initiator-group-form.schema.js
 #: ../app/javascript/components/physical-storage-form/physical-storage-form.schema.js
-#: ../app/javascript/components/volume-mapping-form/volume-mapping-form.schema.js
+#: ../app/javascript/components/volume-mapping-form/service-now-connect-form.schema.js
 msgid "Provider:"
 msgstr ""
 
@@ -79604,7 +79604,7 @@ msgid "Volume path"
 msgstr ""
 
 #:
-#: ../app/javascript/components/volume-mapping-form/volume-mapping-form.schema.js
+#: ../app/javascript/components/volume-mapping-form/service-now-connect-form.schema.js
 msgid "Volume:"
 msgstr ""
 
