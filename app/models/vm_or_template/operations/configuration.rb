@@ -139,6 +139,16 @@ module VmOrTemplate::Operations::Configuration
     raw_clone_volume(options)
   end
 
+  def raw_migrate_volume(_options = {})
+    raise NotImplementedError, _("must be implemented in a subclass")
+  end
+
+  def migrate_volume(options = {})
+    raise _("VM has no EMS, unable to migrate volume") unless ext_management_system
+
+    raw_migrate_volume(options)
+  end
+
   def raw_reconfigure
     raise NotImplementedError, _("must be implemented in a subclass")
   end

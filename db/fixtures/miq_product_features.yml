@@ -835,6 +835,10 @@
       :description: Clone a Volume
       :feature_type: admin
       :identifier: cloud_volume_clone
+    - :name: Migrate
+      :description: Migrate a Volume
+      :feature_type: admin
+      :identifier: cloud_volume_migrate
     - :name: Remove
       :description: Remove Volumes
       :feature_type: admin

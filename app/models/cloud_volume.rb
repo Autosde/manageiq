@@ -32,6 +32,7 @@ class CloudVolume < ApplicationRecord
   supports_not :attach
   supports_not :detach
   supports_not :clone
+  supports_not :migrate
 
   delegate :queue_name_for_ems_operations, :to => :ext_management_system, :allow_nil => true
 
